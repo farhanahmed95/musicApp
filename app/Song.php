@@ -16,7 +16,7 @@ class Song extends Model
 
     public function albums()
     {
-        return $this->morphedByMany('App\Album','songable');
+        return $this->morphByMany('App\Album', 'songable');
     }
     public function playlists()
     {

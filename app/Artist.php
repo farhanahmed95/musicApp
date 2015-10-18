@@ -10,6 +10,6 @@ class Artist extends Model
     protected $fillable = ['name','role','description','artwork_uri'];
 
     public function albums(){
-        return $this->morphedToMany('App\Album','albumable');
+        return $this->morphToMany('App\Album', 'albumable');
     }
 }

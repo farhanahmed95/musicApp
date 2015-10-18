@@ -1,7 +1,7 @@
 <?php
 
-use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
 
 class CreatePlaylistsTable extends Migration
 {
@@ -23,7 +23,7 @@ class CreatePlaylistsTable extends Migration
             $table->timestamps();
         });
 
-        Schema::create('playlist_user',function(Blueprint $table){
+        Schema::create('play_list_user', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('playlist_id')->unsigned();
             $table->integer('user_id')->unsigned();
