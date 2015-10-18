@@ -2,13 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Album;
 use App\Artist;
-use Illuminate\Http\Request;
 use App\Http\Requests;
-use App\Http\Controllers\Controller;
+use Illuminate\Http\Request;
 
-class MainController extends Controller
+class ArtistController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -17,8 +15,8 @@ class MainController extends Controller
      */
     public function index()
     {
-        $albums = Album::all();
-        return $albums;
+        $artists = Artist::all();
+        return $artists;
     }
 
     /**
@@ -28,9 +26,7 @@ class MainController extends Controller
      */
     public function getArtist($id)
     {
-        $artist = Artist::with('albums')->find($id);
-        $album = $artist->albums()->get();
-        return response()->json($artist);
+
     }
     public function create()
     {
@@ -56,7 +52,9 @@ class MainController extends Controller
      */
     public function show($id)
     {
-        //
+        $artist = Artist::with('albums')->find($id);
+
+        return $artist;
     }
 
     /**
